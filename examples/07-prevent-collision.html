@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Vue Grid Layout Example 1 - Basic</title>
+    <title>Vue Grid Layout Example 8 - Prevent Collision</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="app.css">
     <!--<link rel="stylesheet" href="../dist/vue-grid-layout.css">-->
 </head>
 <body>
-    <h1>Vue Grid Layout Example 1 - Basic</h1>
+    <h1>Vue Grid Layout Example 8 - Prevent Collision</h1>
 
     <a href="https://github.com/jbaysolutions/vue-grid-layout">View project on Github</a>
     <br/>
-    <a href="02-events.html">Next example: Move and resize events</a>
+    <a href="06-responsive.html">Previous example: Responsive</a>
 
     <div id="app" style="width: 100%;">
         <!--<pre>{{ $data | json }}</pre>-->
@@ -30,26 +30,25 @@
             <!--<button @click="decreaseWidth">Decrease Width</button>
             <button @click="increaseWidth">Increase Width</button>
             <button @click="addItem">Add an item</button>-->
-            <input type="checkbox" v-model="draggable"/> Draggable
-            <input type="checkbox" v-model="resizable"/> Resizable
             <br/>
-            <grid-layout :layout="layout"
+            <grid-layout :layout.sync="layout"
                          :col-num="12"
                          :row-height="30"
                          :is-draggable="draggable"
                          :is-resizable="resizable"
-                         :vertical-compact="true"
+                         :vertical-compact="false"
+                         :prevent-collision="true"
                          :use-css-transforms="true"
+                         :responsive="true"
             >
                 <grid-item v-for="item in layout"
-                           :static="item.static"
                            :x="item.x"
                            :y="item.y"
                            :w="item.w"
                            :h="item.h"
                            :i="item.i"
                         >
-                    <span class="text">{{itemTitle(item)}}</span>
+                    <span class="text">{{item.i}}</span>
                 </grid-item>
             </grid-layout>
         </div>
@@ -57,6 +56,6 @@
     </div>
     <script src="vue.min.js"></script>
     <script src="../dist/vue-grid-layout.umd.min.js"></script>
-    <script src="01-basic.js"></script>
+    <script src="07-prevent-collision.js"></script>
 </body>
 </html>

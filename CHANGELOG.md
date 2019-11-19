@@ -1,5 +1,60 @@
 # Changelog
 
+## 2.3.7 (Oct 31, 2019)
+
+* renamed 'resized' event emitted when the container changes size (browser window or other), introduced in #337, fixes #358 
+* bugfix on layout-ready event
+
+## 2.3.6 (Sep 11, 2019)
+
+* reverted grid item w and h previous rounding change, fixes #355
+
+## 2.3.5 (Sep 7, 2019)
+
+* Fix: no-touch on mobile and only if item is draggable or resizable (thanks [DGoms](https://github.com/DGoms)).
+* Prevent collision feature (thanks [SheanDe](https://github.com/SheanDe)).
+* Simplified Chinese README (thanks [harrywangchina](https://github.com/harrywangchina)).
+* 'resized' event now emitted if grid item is resized due to changes other than a manual resize (e.g. browser window resize) (thanks [pmorch](https://github.com/pmorch)).
+* Improvement on 'layout-ready' event emit (thanks [pmorch](https://github.com/pmorch)).
+* Added watchers for min/max height and width (thanks [grinat](https://github.com/grinat)).
+* Improvement: make sure the size of grid-item is bigger than the slot-item (thanks [ywmail](https://github.com/ywmail)).
+
+## 2.3.4 (Mar 5, 2019)
+
+* Support for static items (thanks [panjiangyi](https://github.com/panjiangyi)).
+* RTL bugfix (thanks [irvingwa](https://github.com/irvingwa)).
+* Memory leak fixes (thanks [aiankile](https://github.com/aiankile)).
+* Fixed exception on grid layout mount (thanks [BenoitZugmeyer](https://github.com/BenoitZugmeyer)).
+* Fixed overlapping and resizing bugs on responsive mode (thanks [shpfive](https://github.com/shpfive)).
+* Added new events emited by GridLayout (layout-created, layout-before-mount, layout-mounted, layout-ready) (thanks [samuelmolinski](https://github.com/samuelmolinski)).
+
+## 2.3.3 (Dec 26, 2018)
+
+* Reverted adding vue as external, which caused problems loading umd.
+
+## 2.3.2 (Dec 13, 2018)
+
+* Added vue as externals webpack config to fix startup problems (thanks [Micene9](https://github.com/Micene09))
+
+## 2.3.1 (Nov 6, 2018)
+
+* Previous fix for touch dragging on Android broke dragging on other mobile browsers (thanks [onx2](https://github.com/onx2))
+
+
+## 2.3.0 (Oct 26, 2018)
+
+* Responsive layout support (thanks [shpfive](https://github.com/shpfive))
+* Fix for touch dragging on Android (thanks [pbabey](https://github.com/pbabey))
+
+## 2.2.0 (Sep 10, 2018)
+
+* changed project structure and build using Vue CLI
+* GridItem new autosize method. For now, need to be called from child component with this.$parent.autoSize() (thanks[mech01nc01](https://github.com/mech01nc01)) 
+* Abstract DOM related calls for initial SSR Support (thanks[Kukks](https://github.com/Kukks)) 
+* GridItem.i can now be a number or a string (thanks[xch1029](https://github.com/xch1029)) 
+* Use interactjs size restrictions to limit resizing (thanks[LuisCarreras](https://github.com/LuisCarreras)) 
+* Fixed interactjs instance leak on instance release (thanks[zzuligy](https://github.com/zzuligy)) 
+
 ## 2.1.13 (May 2, 2018)
 
 * Resize event now also emits dimensions in pixels (thanks [buremba](https://github.com/buremba)) 

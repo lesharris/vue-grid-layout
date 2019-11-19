@@ -21,33 +21,25 @@ var testLayout = [
     {"x":2,"y":6,"w":2,"h":2,"i":"19"}
 ];
 
-
-//Vue.config.devtools = true;
-
-import GridItem from './GridItem.vue';
-import GridLayout from './GridLayout.vue';
-//import ResponsiveGridLayout from './ResponsiveGridLayout.vue';
-import TestElement from './TestElement.vue';
-import CustomDragElement from './CustomDragElement.vue';
+// var GridLayout = VueGridLayout.GridLayout;
+// var GridItem = VueGridLayout.GridItem;
 
 new Vue({
     el: '#app',
-    components: {
-        //ResponsiveGridLayout,
-        GridLayout,
-        GridItem,
-        TestElement,
-        CustomDragElement,
-    },
+    // components: {
+    //     "GridLayout": GridLayout,
+    //     "GridItem": GridItem
+    // },
     data: {
-        layout: JSON.parse(JSON.stringify(testLayout)),
-        colNum: 0,
+        layout: testLayout,
+        draggable: true,
+        resizable: true,
+        responsive: true,
         index: 0
     },
+/*
     mounted: function () {
         this.index = this.layout.length;
-    },
-    watch: {
     },
     methods: {
         increaseWidth: function(item) {
@@ -72,11 +64,12 @@ new Vue({
             this.index++;
             this.layout.push(item);
         }
-    },
+    }
+*/
 });
 
-
-/*function generateLayout() {
+/*
+function generateLayout() {
     return _.map(_.range(0, 25), function (item, i) {
         var y = Math.ceil(Math.random() * 4) + 1;
         return {
